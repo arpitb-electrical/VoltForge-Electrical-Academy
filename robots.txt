@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://voltforge-electrical.netlify.app/sitemap.xml

@@ -1,0 +1,2998 @@
+/* =====================================
+   VOLTFORGE LIGHT THEME CSS
+   PART 1 - GLOBAL STYLE
+===================================== */
+
+
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* Reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Root Variables */
+
+:root{
+
+    --primary-blue: #0066ff;
+    --secondary-blue: #00bfff;
+
+    --accent-gold: #ffb400;
+
+    --bg-color: #f5faff;
+    --section-bg: #edf6ff;
+
+    --card-bg: #ffffff;
+
+    --text-dark: #081b40;
+
+    --text-gray: #5f6b80;
+
+    --border-color: #d8e8ff;
+
+}
+
+
+/* Smooth Scroll */
+
+html{
+
+    scroll-behavior: smooth;
+
+}
+
+
+/* Body */
+
+body{
+
+    font-family: 'Poppins', sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #f5faff,
+        #eaf5ff
+    );
+
+    color: var(--text-dark);
+
+    overflow-x: hidden;
+
+}
+
+
+/* Electrical Background Effect */
+
+body::before{
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-image:
+
+    radial-gradient(
+        rgba(0,102,255,0.06) 2px,
+        transparent 2px
+    );
+
+    background-size: 50px 50px;
+
+    z-index: -1;
+
+}
+
+
+/* Common Section */
+
+section{
+
+    padding: 90px 8%;
+
+}
+
+
+/* Section Heading */
+
+.section-title{
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+.section-title h2{
+
+    font-size: 42px;
+
+    color: var(--text-dark);
+
+    font-weight: 700;
+
+    position: relative;
+
+    display: inline-block;
+
+}
+
+
+/* Blue underline */
+
+.section-title h2::after{
+
+    content: "";
+
+    width: 70%;
+
+    height: 4px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--primary-blue),
+        var(--secondary-blue)
+    );
+
+    position: absolute;
+
+    left: 15%;
+
+    bottom: -10px;
+
+    border-radius: 10px;
+
+}
+
+
+/* Section Description */
+
+.section-title p{
+
+    margin-top: 25px;
+
+    color: var(--text-gray);
+
+    font-size: 17px;
+
+}
+
+
+/* Buttons */
+
+.btn{
+
+    display: inline-block;
+
+    padding: 14px 32px;
+
+    margin-top: 25px;
+
+    text-decoration: none;
+
+    border-radius: 35px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary-blue),
+        var(--secondary-blue)
+    );
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+    box-shadow:
+    0 10px 25px rgba(0,102,255,0.25);
+
+}
+
+
+/* Button Hover */
+
+.btn:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 15px 35px rgba(0,102,255,0.35);
+
+}
+
+
+/* Animation Classes */
+
+.hidden{
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition: 0.7s ease;
+
+}
+
+
+.show{
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+
+    section{
+
+        padding: 70px 6%;
+
+    }
+
+
+    .section-title h2{
+
+        font-size: 32px;
+
+    }
+
+
+}
+/* =====================================
+   VOLTFORGE LIGHT THEME CSS
+   PART 2 - HEADER & NAVIGATION
+===================================== */
+
+
+/* ==========================
+   LOADER
+========================== */
+
+.loader{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #eaf5ff
+    );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    transition: 0.5s;
+
+}
+
+
+/* Loader Logo */
+
+.logo-loader{
+
+    text-align: center;
+
+}
+
+
+/* Lightning Icon */
+
+.logo-loader i{
+
+    font-size: 65px;
+
+    color: var(--accent-gold);
+
+    animation: lightning 1s infinite;
+
+}
+
+
+/* Loader Text */
+
+.logo-loader h1{
+
+    margin-top: 12px;
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    color: var(--primary-blue);
+
+    letter-spacing: 2px;
+
+}
+
+
+/* Lightning Animation */
+
+@keyframes lightning{
+
+    0%{
+
+        opacity: 0.4;
+        transform: scale(0.9);
+
+    }
+
+
+    50%{
+
+        opacity: 1;
+        transform: scale(1.1);
+
+    }
+
+
+    100%{
+
+        opacity: 0.4;
+        transform: scale(0.9);
+
+    }
+
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+
+    position: fixed;
+
+    top: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+    rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom:
+    1px solid var(--border-color);
+
+}
+
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+
+    width: 90%;
+
+    max-width: 1300px;
+
+    height: 85px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* ==========================
+   LOGO
+========================== */
+
+.logo{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    color: var(--primary-blue);
+
+}
+
+
+.logo img{
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: contain;
+
+    filter:
+    drop-shadow(
+        0 0 10px rgba(0,102,255,0.5)
+    );
+
+}
+
+
+/* ==========================
+   NAVIGATION MENU
+========================== */
+
+.nav-menu{
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 35px;
+
+}
+
+
+/* Menu Links */
+
+.nav-menu a{
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: var(--text-dark);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+}
+
+
+/* Underline Effect */
+
+.nav-menu a::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+
+    height: 3px;
+
+    border-radius: 5px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--primary-blue),
+        var(--secondary-blue)
+    );
+
+    transition: 0.3s;
+
+}
+
+
+/* Hover */
+
+.nav-menu a:hover{
+
+    color: var(--primary-blue);
+
+}
+
+
+.nav-menu a:hover::after,
+
+.nav-menu a.active::after{
+
+    width: 100%;
+
+}
+
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+
+    .navbar{
+
+        flex-direction: column;
+
+        height: auto;
+
+        padding: 15px 0;
+
+    }
+
+
+    .logo{
+
+        font-size: 24px;
+
+    }
+
+
+    .logo img{
+
+        width: 45px;
+
+        height: 45px;
+
+    }
+
+
+    .nav-menu{
+
+        margin-top: 15px;
+
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    .nav-menu a{
+
+        font-size: 15px;
+
+    }
+
+}
+/* =====================================
+   VOLTFORGE LIGHT THEME CSS
+   PART 3 - HERO SECTION
+===================================== */
+
+
+/* ==========================
+   HERO MAIN SECTION
+========================== */
+
+.hero{
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 140px 20px 80px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* Electrical Background Glow */
+
+.hero::before{
+
+    content: "⚡";
+
+    position: absolute;
+
+    font-size: 350px;
+
+    color: rgba(0,102,255,0.05);
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    animation: pulse 4s infinite;
+
+}
+
+
+/* Hero Content */
+
+.hero-content{
+
+    max-width: 900px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* Main Heading */
+
+.hero-content h1{
+
+    font-size: 60px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    color: var(--text-dark);
+
+    margin-bottom: 25px;
+
+}
+
+
+/* Highlight Text */
+
+.hero-content span{
+
+    background: linear-gradient(
+        90deg,
+        var(--primary-blue),
+        var(--secondary-blue)
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+/* Description */
+
+.hero-content p{
+
+    font-size: 20px;
+
+    color: var(--text-gray);
+
+    line-height: 1.8;
+
+    max-width: 750px;
+
+    margin: auto;
+
+}
+
+
+/* Hero Buttons */
+
+.hero .btn{
+
+    margin: 35px 10px 0;
+
+}
+
+
+/* Special YouTube Button */
+
+.youtube-btn{
+
+    background: linear-gradient(
+        135deg,
+        #ff0000,
+        #cc0000
+    );
+
+    box-shadow:
+        0 10px 25px rgba(255,0,0,0.3);
+
+}
+
+
+.youtube-btn:hover{
+
+    box-shadow:
+        0 15px 35px rgba(255,0,0,0.5);
+
+}
+
+
+/* Electric Pulse Animation */
+
+@keyframes pulse{
+
+    0%{
+
+        transform:
+        translate(-50%, -50%)
+        scale(0.9);
+
+        opacity: 0.5;
+
+    }
+
+
+    50%{
+
+        transform:
+        translate(-50%, -50%)
+        scale(1.1);
+
+        opacity: 1;
+
+    }
+
+
+    100%{
+
+        transform:
+        translate(-50%, -50%)
+        scale(0.9);
+
+        opacity: 0.5;
+
+    }
+
+}
+
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+
+    .hero{
+
+        padding: 120px 20px 60px;
+
+    }
+
+
+    .hero::before{
+
+        font-size: 200px;
+
+    }
+
+
+    .hero-content h1{
+
+        font-size: 38px;
+
+    }
+
+
+    .hero-content p{
+
+        font-size: 17px;
+
+    }
+
+
+    .hero .btn{
+
+        display: block;
+
+        margin: 15px auto;
+
+        max-width: 230px;
+
+    }
+
+}
+/* =====================================
+   VOLTFORGE LIGHT THEME CSS
+   PART 4 - PDF LIBRARY SECTION
+===================================== */
+
+
+/* ==========================
+   PDF SECTION
+========================== */
+
+.pdf-section{
+
+    background:
+    linear-gradient(
+        180deg,
+        #ffffff,
+        #f5faff
+    );
+
+}
+
+
+/* ==========================
+   SEARCH BOX
+========================== */
+
+.search-box{
+
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    position: relative;
+
+}
+
+
+.search-box input{
+
+    width: 100%;
+
+    padding: 18px 55px 18px 25px;
+
+    background: white;
+
+    border: 2px solid var(--border-color);
+
+    border-radius: 50px;
+
+    color: var(--text-dark);
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+
+    box-shadow:
+    0 8px 20px rgba(0,102,255,0.08);
+
+}
+
+
+.search-box input:focus{
+
+    border-color: var(--primary-blue);
+
+    box-shadow:
+    0 10px 30px rgba(0,102,255,0.25);
+
+}
+
+
+.search-box input::placeholder{
+
+    color: #7b8799;
+
+}
+
+
+.search-box i{
+
+    position: absolute;
+
+    right: 22px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--primary-blue);
+
+    font-size: 18px;
+
+}
+
+
+/* ==========================
+   FILTER BUTTONS
+========================== */
+
+.filter-buttons{
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.filter-btn{
+
+    padding: 12px 25px;
+
+    background: white;
+
+    border: 2px solid var(--border-color);
+
+    border-radius: 35px;
+
+    color: var(--text-dark);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.05);
+
+}
+
+
+.filter-btn:hover{
+
+    transform: translateY(-4px);
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary-blue),
+        var(--secondary-blue)
+    );
+
+    color: white;
+
+    border-color: transparent;
+
+    box-shadow:
+    0 10px 25px rgba(0,102,255,0.35);
+
+}
+
+
+/* Active Button */
+
+.filter-btn.active{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary-blue),
+        var(--secondary-blue)
+    );
+
+    color: white;
+
+    border: none;
+
+    box-shadow:
+    0 10px 25px rgba(0,102,255,0.35);
+
+}
+
+
+/* ==========================
+   PDF CONTAINER
+========================== */
+
+.pdf-container{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(300px,1fr));
+
+    gap: 30px;
+
+}
+
+
+/* =========================
+   PREMIUM PDF CARD
+========================= */
+
+.pdf-card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    border: 1px solid #d8e6ff;
+
+    box-shadow:
+        0 10px 30px rgba(0,102,255,0.12);
+
+    transition: 0.35s;
+
+    max-width: 420px;
+
+    margin: auto;
+
+    padding-bottom: 25px;
+
+}
+
+
+.pdf-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 18px 40px rgba(0,102,255,0.25);
+
+}
+
+
+/* PDF Thumbnail */
+
+.pdf-thumbnail {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-bottom: 3px solid #00c6ff;
+
+}
+
+
+/* PDF Title */
+
+.pdf-card h3 {
+
+    color: #061b48;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    padding: 18px 15px 10px;
+
+}
+
+
+/* Subject Badge */
+
+.subject-tag {
+
+    display: inline-block;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00c6ff,
+        #0072ff
+    );
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+    0 5px 15px rgba(0,114,255,0.35);
+
+}
+
+
+/* Download Button */
+
+.pdf-card .btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+/* ==========================
+   NO RESULT
+========================== */
+
+.no-result{
+
+    grid-column: 1 / -1;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    color: var(--primary-blue);
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    box-shadow:
+    0 10px 30px rgba(0,102,255,0.08);
+
+}
+
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    .search-box input{
+
+        font-size: 15px;
+
+        padding: 15px 50px 15px 20px;
+
+    }
+
+
+    .filter-btn{
+
+        padding: 10px 18px;
+
+        font-size: 14px;
+
+    }
+
+
+    .pdf-container{
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .pdf-card{
+
+        padding: 25px;
+
+    }
+
+
+    .pdf-card h3{
+
+        font-size: 20px;
+
+    }
+
+}
+/* =====================================
+   VOLTFORGE LIGHT THEME CSS
+   PART 5 - VIDEOS & STATISTICS
+===================================== */
+
+
+/* ==========================
+   YOUTUBE VIDEO SECTION
+========================== */
+
+.video-container{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 30px;
+
+}
+
+
+/* Video Card */
+
+/* =========================
+   PREMIUM VIDEO CARD
+========================= */
+
+.video-card {
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    border: 1px solid #dce8ff;
+
+    box-shadow:
+        0 10px 30px rgba(0,102,255,0.12);
+
+    transition: 0.35s ease;
+
+    max-width: 420px;
+
+    margin: auto;
+
+    padding-bottom: 25px;
+
+}
+
+
+/* Hover Effect */
+
+.video-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(0,102,255,0.25);
+
+}
+
+
+/* Video Thumbnail */
+
+.video-thumbnail {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-bottom: 3px solid #ff0000;
+
+}
+
+
+/* Video Title */
+
+.video-card h3 {
+
+    color: #061b48;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    padding: 18px 15px 10px;
+
+    line-height: 1.4;
+
+}
+
+
+/* Subject Badge */
+
+.video-subject {
+
+    display: inline-block;
+
+    background: linear-gradient(
+        135deg,
+        #ff0000,
+        #cc0000
+    );
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 5px 15px rgba(255,0,0,0.35);
+
+}
+
+
+/* Watch Button */
+
+.video-card .btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+}
+
+
+/* ==========================
+   STATISTICS SECTION
+========================== */
+
+.stats{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(250px,1fr));
+
+    gap: 25px;
+
+}
+
+
+/* Counter Cards */
+
+.stat-card{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #eef6ff
+    );
+
+    border-radius: 22px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border: 1px solid var(--border-color);
+
+    transition: 0.35s;
+
+    box-shadow:
+    0 10px 30px rgba(0,102,255,0.08);
+
+}
+
+
+/* Hover */
+
+.stat-card:hover{
+
+    transform: translateY(-10px);
+
+    box-shadow:
+    0 15px 40px rgba(0,102,255,0.25);
+
+}
+
+
+/* Icon */
+
+.stat-card i{
+
+    font-size: 42px;
+
+    color: var(--accent-gold);
+
+}
+
+
+/* Counter Number */
+
+.stat-card h2{
+
+    margin: 15px 0;
+
+    font-size: 42px;
+
+    color: var(--primary-blue);
+
+    font-weight: 800;
+
+}
+
+
+/* Text */
+
+.stat-card p{
+
+    color: var(--text-gray);
+
+    font-size: 16px;
+
+}
+
+
+/* ==========================
+   EXAM / ACHIEVEMENT CARD
+========================== */
+
+.exam-card{
+
+    max-width: 900px;
+
+    margin: auto;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #f5faff
+    );
+
+    padding: 45px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    border: 1px solid var(--border-color);
+
+    box-shadow:
+    0 10px 35px rgba(0,102,255,0.1);
+
+    transition: 0.35s;
+
+}
+
+
+/* Hover */
+
+.exam-card:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow:
+    0 15px 45px rgba(0,102,255,0.25);
+
+}
+
+
+/* Icon */
+
+.exam-card i{
+
+    font-size: 55px;
+
+    color: var(--accent-gold);
+
+}
+
+
+/* Heading */
+
+.exam-card h3{
+
+    margin: 20px 0;
+
+    font-size: 30px;
+
+    color: var(--text-dark);
+
+    font-weight: 700;
+
+}
+
+
+/* Paragraph */
+
+.exam-card p{
+
+    color: var(--text-gray);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+
+    .video-container{
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .video-card{
+
+        padding: 25px;
+
+    }
+
+
+    .video-card h3{
+
+        font-size: 20px;
+
+    }
+
+
+    .stat-card{
+
+        padding: 28px;
+
+    }
+
+
+    .stat-card h2{
+
+        font-size: 36px;
+
+    }
+
+
+    .exam-card{
+
+        padding: 30px 25px;
+
+    }
+
+
+    .exam-card h3{
+
+        font-size: 24px;
+
+    }
+
+
+    .exam-card p{
+
+        font-size: 16px;
+
+    }
+
+}
+/* =====================================
+   VOLTFORGE LIGHT THEME CSS
+   PART 6 - ABOUT, FOUNDER, CONTACT, FOOTER
+===================================== */
+
+
+/* ==========================
+   ABOUT SECTION
+========================== */
+
+.about-section{
+
+    background: 
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #eef7ff
+    );
+
+}
+
+
+.about-content{
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    border: 1px solid var(--border-color);
+
+    box-shadow:
+    0 12px 35px rgba(0,102,255,0.10);
+
+    transition: 0.3s;
+
+}
+
+
+.about-content:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow:
+    0 18px 45px rgba(0,102,255,0.25);
+
+}
+
+
+.about-content p{
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: var(--text-gray);
+
+}
+
+
+/* ==========================
+   FOUNDER SECTION
+========================== */
+
+.founder-section{
+
+    max-width: 900px;
+
+    margin: 60px auto;
+
+    padding: 45px;
+
+    text-align: center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0066ff,
+        #00bfff
+    );
+
+    color: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+    0 15px 45px rgba(0,102,255,0.35);
+
+    transition: 0.3s;
+
+}
+
+
+.founder-section:hover{
+
+    transform: translateY(-10px);
+
+}
+
+
+.founder-section h2{
+
+    font-size: 36px;
+
+    margin-bottom: 20px;
+
+    color: #ffd700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.founder-section strong{
+
+    display: block;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+
+    color: white;
+
+}
+
+
+.founder-section p{
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+}
+
+
+/* ==========================
+   CONTACT SECTION
+========================== */
+
+.contact-section{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef7ff,
+        #ffffff
+    );
+
+}
+
+
+.contact-links{
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* Contact Buttons */
+
+.contact-links .btn{
+
+    min-width: 240px;
+
+    text-align: center;
+
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+
+    background:
+    linear-gradient(
+        135deg,
+        #061a45,
+        #0d2f73
+    );
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    margin-top: 50px;
+
+}
+
+
+.footer-logo{
+
+    font-size: 32px;
+
+    font-weight: 800;
+
+    color: #00e5ff;
+
+    margin-bottom: 15px;
+
+}
+
+
+.footer-text{
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #d8e8ff;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* Footer Links */
+
+.footer-links{
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+
+}
+
+
+.footer-links a{
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    transition: 0.3s;
+
+}
+
+
+.footer-links a:hover{
+
+    background: white;
+
+    color: var(--primary-blue);
+
+    transform: translateY(-5px);
+
+}
+
+
+/* Copyright */
+
+.copyright{
+
+    font-size: 14px;
+
+    color: #a8c4ff;
+
+}
+
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+
+    .about-content,
+    .founder-section{
+
+        padding: 30px 22px;
+
+    }
+
+
+    .about-content p,
+    .founder-section p{
+
+        font-size: 16px;
+
+    }
+
+
+    .founder-section h2{
+
+        font-size: 28px;
+
+    }
+
+
+    .founder-section strong{
+
+        font-size: 22px;
+
+    }
+
+
+    .footer-logo{
+
+        font-size: 26px;
+
+    }
+
+
+    .footer-links{
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    .footer-links a{
+
+        width: 250px;
+
+    }
+
+}
+/* =====================================
+   VOLTFORGE LIGHT THEME CSS
+   PART 7 - FINAL PREMIUM FEATURES
+===================================== */
+
+
+/* ==========================
+   BACK TO TOP BUTTON
+========================== */
+
+#backToTop {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 60px;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0066ff,
+        #00c6ff
+    );
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-shadow:
+        0 8px 25px rgba(0,102,255,0.45);
+
+    transition: 0.3s ease;
+
+    z-index: 999;
+
+}
+
+
+/* Hover Effect */
+
+#backToTop:hover {
+
+    transform:
+    translateY(-8px)
+    scale(1.1);
+
+    box-shadow:
+        0 15px 35px rgba(0,102,255,0.6);
+
+}
+
+
+/* ==========================
+   TELEGRAM FLOAT BUTTON
+========================== */
+
+.telegram-float {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 100px;
+
+    width: 60px;
+
+    height: 60px;
+
+    background: #229ED9;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 32px;
+
+    box-shadow:
+        0 8px 25px rgba(34,158,217,0.5);
+
+    transition: 0.3s ease;
+
+    z-index: 999;
+
+}
+
+
+/* Telegram Hover */
+
+.telegram-float:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.1);
+
+    box-shadow:
+        0 15px 35px rgba(34,158,217,0.7);
+
+}
+
+
+/* ==========================
+   GLOBAL CARD HOVER EFFECT
+========================== */
+
+.pdf-card,
+.video-card,
+.stat-card,
+.exam-card,
+.about-content,
+.founder-section {
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+}
+
+
+/* Smooth Animation Class */
+
+.hidden {
+
+    opacity: 0;
+
+    transform:
+    translateY(40px);
+
+}
+
+
+.show {
+
+    opacity: 1;
+
+    transform:
+    translateY(0);
+
+    transition:
+    all 0.8s ease;
+
+}
+
+
+/* ==========================
+   ELECTRICAL LIGHT EFFECT
+========================== */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+    radial-gradient(
+        circle at 20% 30%,
+        rgba(0,102,255,0.08),
+        transparent 35%
+    ),
+    radial-gradient(
+        circle at 80% 70%,
+        rgba(0,198,255,0.08),
+        transparent 35%
+    );
+
+    pointer-events: none;
+
+    z-index: -1;
+
+}
+
+
+/* ==========================
+   BUTTON EXTRA EFFECT
+========================== */
+
+.btn {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* Shine Animation */
+
+.btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+
+    transition: 0.6s;
+
+}
+
+
+.btn:hover::before {
+
+    left: 100%;
+
+}
+
+
+/* ==========================
+   MOBILE OPTIMIZATION
+========================== */
+
+@media(max-width:768px) {
+
+
+    #backToTop {
+
+        width: 50px;
+
+        height: 50px;
+
+        right: 15px;
+
+        bottom: 20px;
+
+        font-size: 20px;
+
+    }
+
+
+    .telegram-float {
+
+        width: 50px;
+
+        height: 50px;
+
+        right: 15px;
+
+        bottom: 80px;
+
+        font-size: 26px;
+
+    }
+
+}
+/* =====================================
+   CONTACT FOUNDER PREMIUM DESIGN
+===================================== */
+
+.contact-founder {
+
+    text-align: center;
+
+    margin: 20px 0 35px;
+
+}
+
+
+/* Founder Text */
+
+.contact-founder h3 {
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    color: #ffb800;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* Founder Name */
+
+.contact-founder h2 {
+
+    font-size: 32px;
+
+    font-weight: 800;
+
+    background: linear-gradient(
+        135deg,
+        #0066ff,
+        #00c6ff
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 5px;
+
+}
+
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    .contact-founder h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .contact-founder h3 {
+
+        font-size: 18px;
+
+        letter-spacing: 2px;
+
+    }
+
+}
+/* =====================================
+   VIDEO FILTER BUTTONS
+===================================== */
+
+.video-filter-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+
+}
+
+
+/* Button Design */
+
+.video-filter-btn {
+
+    padding: 12px 22px;
+
+    border-radius: 30px;
+
+    border: 1px solid #ff0000;
+
+    background: white;
+
+    color: #ff0000;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+/* Hover Effect */
+
+.video-filter-btn:hover {
+
+    background: #ff0000;
+
+    color: white;
+
+    box-shadow:
+        0 0 20px rgba(255,0,0,0.5);
+
+}
+
+
+/* Active Button */
+
+.video-filter-btn.active {
+
+    background: linear-gradient(
+        135deg,
+        #ff0000,
+        #cc0000
+    );
+
+    color: white;
+
+    border-color: transparent;
+
+    box-shadow:
+        0 0 25px rgba(255,0,0,0.7);
+
+}
+
+
+/* Mobile Responsive */
+
+@media(max-width:768px) {
+
+    .video-filter-btn {
+
+        padding: 10px 18px;
+
+        font-size: 14px;
+
+    }
+
+}
+/* =====================================
+   PREMIUM PDF & VIDEO THUMBNAILS
+===================================== */
+
+
+/* PDF & Video Card Image */
+
+.pdf-thumbnail,
+.video-thumbnail{
+
+     width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 15px 15px 0 0;
+
+    display: block;
+
+
+}
+
+
+
+/* Hover Image Zoom */
+
+.pdf-card:hover .pdf-thumbnail,
+.video-card:hover .video-thumbnail{
+
+    transform: scale(1.05);
+
+    border-color: #00e5ff;
+
+    box-shadow:
+        0 0 25px rgba(0,229,255,0.7);
+
+}
+
+
+
+/* Card Image Overflow Fix */
+
+.pdf-card,
+.video-card{
+    max-width: 400px;
+
+    margin: auto;
+
+    overflow: hidden;
+    
+
+}
+
+
+
+/* Subject Badge */
+
+.subject-tag{
+
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00e5ff,
+        #0077ff
+    );
+
+    color: white;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 0 15px rgba(0,229,255,0.5);
+
+}
+
+
+
+/* PDF Card Improvement */
+
+.pdf-card h3,
+.video-card h3{
+
+    font-size: 20px;
+
+    min-height: 55px;
+
+    line-height: 1.5;
+
+}
+
+
+
+/* Premium Hover Effect */
+
+.pdf-card:hover,
+.video-card:hover{
+
+    transform:
+        translateY(-12px);
+
+}
+
+
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+
+    .pdf-thumbnail,
+    .video-thumbnail{
+
+        height: 160px;
+
+    }
+
+
+    .pdf-card h3,
+    .video-card h3{
+
+        font-size: 18px;
+
+        min-height: auto;
+
+    }
+
+}
+/* =========================
+   ELECTRIC PARTICLES EFFECT
+========================= */
+
+.hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.electric-particles {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    top: 0;
+
+    left: 0;
+
+}
+
+
+.electric-particles span {
+
+    position: absolute;
+
+    width: 8px;
+
+    height: 8px;
+
+    background: #00cfff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #00cfff,
+        0 0 20px #00cfff,
+        0 0 40px #00cfff;
+
+    animation:
+        electricMove 8s linear infinite;
+
+}
+
+
+/* Different positions */
+
+.electric-particles span:nth-child(1){
+    left: 10%;
+    animation-duration: 7s;
+}
+
+.electric-particles span:nth-child(2){
+    left: 25%;
+    animation-duration: 9s;
+}
+
+.electric-particles span:nth-child(3){
+    left: 40%;
+    animation-duration: 6s;
+}
+
+.electric-particles span:nth-child(4){
+    left: 55%;
+    animation-duration: 8s;
+}
+
+.electric-particles span:nth-child(5){
+    left: 70%;
+    animation-duration: 10s;
+}
+
+.electric-particles span:nth-child(6){
+    left: 85%;
+    animation-duration: 7s;
+}
+
+.electric-particles span:nth-child(7){
+    left: 95%;
+    animation-duration: 12s;
+}
+
+.electric-particles span:nth-child(8){
+    left: 50%;
+    animation-duration: 5s;
+}
+
+
+/* Animation */
+
+@keyframes electricMove {
+
+    0% {
+
+        transform:
+        translateY(100vh);
+
+        opacity: 0;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+        translateY(-100px);
+
+        opacity: 0;
+
+    }
+
+}
+/* =========================
+   LIGHTNING EFFECT
+========================= */
+
+.lightning {
+
+    position: absolute;
+
+    top: 15%;
+    left: 50%;
+
+    width: 3px;
+    height: 250px;
+
+    background: linear-gradient(
+        transparent,
+        #00e5ff,
+        white,
+        #00e5ff,
+        transparent
+    );
+
+    box-shadow:
+        0 0 15px #00e5ff,
+        0 0 40px #00e5ff;
+
+    animation:
+        flashLightning 4s infinite;
+
+    opacity: 0;
+
+}
+
+
+/* Lightning Animation */
+
+@keyframes flashLightning {
+
+    0%, 90%, 100% {
+
+        opacity: 0;
+
+    }
+
+
+    92% {
+
+        opacity: 1;
+
+    }
+
+
+    94% {
+
+        opacity: 0.4;
+
+    }
+
+
+    96% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================
+   ELECTRIC CIRCUIT LINES
+========================= */
+
+.circuit-lines {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* Lines */
+
+.circuit-lines span {
+
+    position: absolute;
+
+    height: 2px;
+
+    background: #00e5ff;
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 25px #00e5ff;
+
+    animation:
+        moveCircuit 6s linear infinite;
+
+}
+
+
+/* Different Lines */
+
+.circuit-lines span:nth-child(1) {
+
+    width: 250px;
+
+    top: 25%;
+
+    left: -300px;
+
+}
+
+
+.circuit-lines span:nth-child(2) {
+
+    width: 180px;
+
+    top: 55%;
+
+    left: -200px;
+
+    animation-delay: 2s;
+
+}
+
+
+.circuit-lines span:nth-child(3) {
+
+    width: 300px;
+
+    top: 75%;
+
+    left: -350px;
+
+    animation-delay: 4s;
+
+}
+
+
+/* Moving Animation */
+
+@keyframes moveCircuit {
+
+    0% {
+
+        transform:
+        translateX(0);
+
+    }
+
+
+    100% {
+
+        transform:
+        translateX(150vw);
+
+    }
+
+}
+/* =========================
+   ELECTRICAL GRID BACKGROUND
+========================= */
+
+.electric-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0,229,255,0.12) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,229,255,0.12) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    animation:
+        gridMove 10s linear infinite;
+
+    opacity: 0.5;
+
+}
+
+
+@keyframes gridMove {
+
+    0% {
+
+        transform:
+        translateY(0);
+
+    }
+
+
+    100% {
+
+        transform:
+        translateY(50px);
+
+    }
+
+}
+
+
+/* =========================
+   FLOATING ENERGY RINGS
+========================= */
+
+.energy-rings {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+}
+
+
+.energy-rings span {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 2px solid #00e5ff;
+
+    box-shadow:
+        0 0 25px #00e5ff;
+
+    animation:
+        pulseRing 5s infinite ease-in-out;
+
+}
+
+
+/* Ring 1 */
+
+.energy-rings span:nth-child(1){
+
+    width: 200px;
+    height: 200px;
+
+    top: 15%;
+    left: 10%;
+
+}
+
+
+/* Ring 2 */
+
+.energy-rings span:nth-child(2){
+
+    width: 150px;
+    height: 150px;
+
+    top: 55%;
+    right: 15%;
+
+    animation-delay: 1.5s;
+
+}
+
+
+/* Ring 3 */
+
+.energy-rings span:nth-child(3){
+
+    width: 250px;
+    height: 250px;
+
+    bottom: 5%;
+    left: 45%;
+
+    animation-delay: 3s;
+
+}
+
+
+/* Ring Animation */
+
+@keyframes pulseRing {
+
+    0% {
+
+        transform: scale(0.9);
+
+        opacity: 0.3;
+
+    }
+
+
+    50% {
+
+        transform: scale(1.1);
+
+        opacity: 0.9;
+
+    }
+
+
+    100% {
+
+        transform: scale(0.9);
+
+        opacity: 0.3;
+
+    }
+
+}
